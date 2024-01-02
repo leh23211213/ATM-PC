@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1Ts+ByBRjpYf/u41CVWNVI0en6BLQ3V942d9VU6TjwzF285LRkAiX/7j5wG6/mZrR6DQw45zz770VnplTDD2qw==",
+  "dgSpecHash": "gzp8T/h2RJOsLXejGVFEX2tIuyKlc2d2zAD+XcyDrSVYPFpCI16zR6dPyTz24LtbuQJ4FWceAtlr8hGAT4/U4w==",
   "success": true,
   "projectFilePath": "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lenovo\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
