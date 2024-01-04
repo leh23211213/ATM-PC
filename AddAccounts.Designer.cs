@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAccounts));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             panel1 = new Panel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -46,14 +46,15 @@
             label3 = new Label();
             label4 = new Label();
             cbGenderTb = new ComboBox();
-            txtAdressTb = new TextBox();
-            txtAddressTb = new Label();
-            cbOccupTb = new ComboBox();
-            txtOccupTb = new Label();
-            btnSubmitTb = new Button();
+            txtAddressTb = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
             btnEditTb = new Button();
             btnCancelTb = new Button();
             AccountDGV4 = new Guna.UI2.WinForms.Guna2DataGridView();
+            btnSubmitTb = new Button();
+            txtOccupTb = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
@@ -62,13 +63,13 @@
             // 
             // guna2PictureBox4
             // 
-            guna2PictureBox4.CustomizableEdges = customizableEdges13;
+            guna2PictureBox4.CustomizableEdges = customizableEdges1;
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.Image = (Image)resources.GetObject("guna2PictureBox4.Image");
             guna2PictureBox4.ImageRotate = 0F;
             guna2PictureBox4.Location = new Point(1184, 12);
             guna2PictureBox4.Name = "guna2PictureBox4";
-            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2PictureBox4.Size = new Size(28, 26);
             guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox4.TabIndex = 18;
@@ -87,13 +88,13 @@
             // 
             // guna2PictureBox2
             // 
-            guna2PictureBox2.CustomizableEdges = customizableEdges15;
+            guna2PictureBox2.CustomizableEdges = customizableEdges3;
             guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(0, 0);
             guna2PictureBox2.Name = "guna2PictureBox2";
-            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2PictureBox2.Size = new Size(65, 58);
             guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox2.TabIndex = 20;
@@ -164,56 +165,35 @@
             cbGenderTb.Size = new Size(149, 23);
             cbGenderTb.TabIndex = 26;
             // 
-            // txtAdressTb
-            // 
-            txtAdressTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAdressTb.Location = new Point(518, 109);
-            txtAdressTb.Multiline = true;
-            txtAdressTb.Name = "txtAdressTb";
-            txtAdressTb.Size = new Size(173, 94);
-            txtAdressTb.TabIndex = 28;
-            // 
             // txtAddressTb
             // 
-            txtAddressTb.AutoSize = true;
-            txtAddressTb.Font = new Font("Times New Roman", 15.75F);
-            txtAddressTb.Location = new Point(518, 87);
+            txtAddressTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddressTb.Location = new Point(518, 109);
+            txtAddressTb.Multiline = true;
             txtAddressTb.Name = "txtAddressTb";
-            txtAddressTb.Size = new Size(76, 23);
-            txtAddressTb.TabIndex = 27;
-            txtAddressTb.Text = "Address";
-            txtAddressTb.Click += label5_Click;
+            txtAddressTb.Size = new Size(173, 94);
+            txtAddressTb.TabIndex = 28;
             // 
-            // cbOccupTb
+            // label5
             // 
-            cbOccupTb.FormattingEnabled = true;
-            cbOccupTb.Location = new Point(747, 114);
-            cbOccupTb.Name = "cbOccupTb";
-            cbOccupTb.Size = new Size(149, 23);
-            cbOccupTb.TabIndex = 30;
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 15.75F);
+            label5.Location = new Point(518, 87);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 23);
+            label5.TabIndex = 27;
+            label5.Text = "Address";
+            label5.Click += label5_Click;
             // 
-            // txtOccupTb
+            // label6
             // 
-            txtOccupTb.AutoSize = true;
-            txtOccupTb.Font = new Font("Times New Roman", 15.75F);
-            txtOccupTb.Location = new Point(747, 87);
-            txtOccupTb.Name = "txtOccupTb";
-            txtOccupTb.Size = new Size(106, 23);
-            txtOccupTb.TabIndex = 29;
-            txtOccupTb.Text = "Occupation";
-            // 
-            // btnSubmitTb
-            // 
-            btnSubmitTb.BackColor = Color.DodgerBlue;
-            btnSubmitTb.Font = new Font("Times New Roman", 18F);
-            btnSubmitTb.ForeColor = SystemColors.ControlLightLight;
-            btnSubmitTb.Location = new Point(327, 263);
-            btnSubmitTb.Name = "btnSubmitTb";
-            btnSubmitTb.Size = new Size(149, 38);
-            btnSubmitTb.TabIndex = 31;
-            btnSubmitTb.Text = "Submit";
-            btnSubmitTb.UseVisualStyleBackColor = false;
-            btnSubmitTb.Click += button1_Click;
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 15.75F);
+            label6.Location = new Point(747, 87);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 23);
+            label6.TabIndex = 29;
+            label6.Text = "Occupation";
             // 
             // btnEditTb
             // 
@@ -243,26 +223,26 @@
             // 
             // AccountDGV4
             // 
-            dataGridViewCellStyle10.BackColor = Color.White;
-            AccountDGV4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            AccountDGV4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            AccountDGV4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AccountDGV4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AccountDGV4.ColumnHeadersHeight = 4;
             AccountDGV4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.White;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            AccountDGV4.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AccountDGV4.DefaultCellStyle = dataGridViewCellStyle3;
             AccountDGV4.GridColor = Color.FromArgb(231, 229, 255);
             AccountDGV4.Location = new Point(65, 342);
             AccountDGV4.Name = "AccountDGV4";
@@ -292,20 +272,55 @@
             AccountDGV4.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             AccountDGV4.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
+            // btnSubmitTb
+            // 
+            btnSubmitTb.BackColor = Color.DodgerBlue;
+            btnSubmitTb.Font = new Font("Times New Roman", 18F);
+            btnSubmitTb.ForeColor = SystemColors.ControlLightLight;
+            btnSubmitTb.Location = new Point(327, 263);
+            btnSubmitTb.Name = "btnSubmitTb";
+            btnSubmitTb.Size = new Size(149, 38);
+            btnSubmitTb.TabIndex = 35;
+            btnSubmitTb.Text = "Submit";
+            btnSubmitTb.UseVisualStyleBackColor = false;
+            btnSubmitTb.Click += btnSubmitTb_Click;
+            // 
+            // txtOccupTb
+            // 
+            txtOccupTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtOccupTb.Location = new Point(747, 113);
+            txtOccupTb.Name = "txtOccupTb";
+            txtOccupTb.Size = new Size(149, 26);
+            txtOccupTb.TabIndex = 36;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DodgerBlue;
+            button1.Font = new Font("Times New Roman", 18F);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(1029, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(149, 38);
+            button1.TabIndex = 37;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // AddAccounts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1224, 711);
+            Controls.Add(button1);
+            Controls.Add(txtOccupTb);
+            Controls.Add(btnSubmitTb);
             Controls.Add(AccountDGV4);
             Controls.Add(btnCancelTb);
             Controls.Add(btnEditTb);
-            Controls.Add(btnSubmitTb);
-            Controls.Add(cbOccupTb);
-            Controls.Add(txtOccupTb);
-            Controls.Add(txtAdressTb);
+            Controls.Add(label6);
             Controls.Add(txtAddressTb);
+            Controls.Add(label5);
             Controls.Add(cbGenderTb);
             Controls.Add(label4);
             Controls.Add(txtPhoneTb);
@@ -338,13 +353,14 @@
         private Label label3;
         private Label label4;
         private ComboBox cbGenderTb;
-        private TextBox txtAdressTb;
-        private Label txtAddressTb;
-        private ComboBox cbOccupTb;
-        private Label txtOccupTb;
-        private Button btnSubmitTb;
+        private TextBox txtAddressTb;
+        private Label label5;
+        private Label label6;
         private Button btnEditTb;
         private Button btnCancelTb;
         private Guna.UI2.WinForms.Guna2DataGridView AccountDGV4;
+        private Button btnSubmitTb;
+        private TextBox txtOccupTb;
+        private Button button1;
     }
 }
