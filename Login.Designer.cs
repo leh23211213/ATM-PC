@@ -42,6 +42,7 @@
             button1 = new Button();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
@@ -141,12 +142,24 @@
             guna2PictureBox1.TabStop = false;
             guna2PictureBox1.Click += guna2PictureBox1_Click;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(646, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 38);
+            button2.TabIndex = 11;
+            button2.Text = "Login";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(guna2PictureBox1);
             Controls.Add(guna2PictureBox2);
             Controls.Add(button1);
@@ -177,5 +190,6 @@
         private Button button1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Button button2;
     }
 }
