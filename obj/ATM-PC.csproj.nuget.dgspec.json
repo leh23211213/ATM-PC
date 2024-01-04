@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj": {}
+    "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj": {}
   },
   "projects": {
-    "e:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj": {
+    "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
+        "projectUniqueName": "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
         "projectName": "ATM-PC",
-        "projectPath": "e:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
+        "projectPath": "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "e:\\IT\\VSCode\\Github\\ATM-PC\\obj\\",
+        "outputPath": "E:\\IT\\VSCode\\Github\\ATM-PC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

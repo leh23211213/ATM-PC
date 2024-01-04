@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l2HAJSnAa8EX85RYs9rk1zjmnZQvgh59Y5DB3u8s+12biIS1gP7oF4Ah3B7xVW1e6+o1ul0HFqHxjkkrcq8WQA==",
+  "dgSpecHash": "VtVvolR4yTQ1do08FAkug7y3EnPuVCRwlb6O4HEHgXTJYFU14bJQHQTCN31D4CC863SFjKB9vcA7EAoneJtfIg==",
   "success": true,
-  "projectFilePath": "e:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
+  "projectFilePath": "E:\\IT\\VSCode\\Github\\ATM-PC\\ATM-PC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
