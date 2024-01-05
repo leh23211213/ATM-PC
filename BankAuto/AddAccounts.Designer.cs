@@ -54,7 +54,6 @@
             AccountDGV4 = new Guna.UI2.WinForms.Guna2DataGridView();
             btnSubmitTb = new Button();
             txtOccupTb = new TextBox();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
@@ -74,6 +73,7 @@
             guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox4.TabIndex = 18;
             guna2PictureBox4.TabStop = false;
+            guna2PictureBox4.Click += guna2PictureBox4_Click;
             // 
             // panel1
             // 
@@ -112,11 +112,12 @@
             // 
             // txtNameTb
             // 
-            txtNameTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNameTb.Font = new Font("Times New Roman", 12F);
             txtNameTb.Location = new Point(117, 109);
             txtNameTb.Name = "txtNameTb";
             txtNameTb.Size = new Size(149, 26);
             txtNameTb.TabIndex = 22;
+            txtNameTb.TextChanged += txtNameTb_TextChanged;
             // 
             // label2
             // 
@@ -130,7 +131,7 @@
             // 
             // txtPhoneTb
             // 
-            txtPhoneTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhoneTb.Font = new Font("Times New Roman", 12F);
             txtPhoneTb.Location = new Point(327, 109);
             txtPhoneTb.Name = "txtPhoneTb";
             txtPhoneTb.Size = new Size(149, 26);
@@ -158,16 +159,17 @@
             // 
             // cbGenderTb
             // 
+            cbGenderTb.Font = new Font("Times New Roman", 12F);
             cbGenderTb.FormattingEnabled = true;
             cbGenderTb.Items.AddRange(new object[] { "Male", "Female" });
             cbGenderTb.Location = new Point(327, 180);
             cbGenderTb.Name = "cbGenderTb";
-            cbGenderTb.Size = new Size(149, 23);
+            cbGenderTb.Size = new Size(149, 27);
             cbGenderTb.TabIndex = 26;
             // 
             // txtAddressTb
             // 
-            txtAddressTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddressTb.Font = new Font("Times New Roman", 12F);
             txtAddressTb.Location = new Point(518, 109);
             txtAddressTb.Multiline = true;
             txtAddressTb.Name = "txtAddressTb";
@@ -189,7 +191,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 15.75F);
-            label6.Location = new Point(747, 87);
+            label6.Location = new Point(117, 153);
             label6.Name = "label6";
             label6.Size = new Size(106, 23);
             label6.TabIndex = 29;
@@ -200,7 +202,7 @@
             btnEditTb.BackColor = Color.DodgerBlue;
             btnEditTb.Font = new Font("Times New Roman", 18F);
             btnEditTb.ForeColor = SystemColors.ControlLightLight;
-            btnEditTb.Location = new Point(542, 263);
+            btnEditTb.Location = new Point(327, 252);
             btnEditTb.Name = "btnEditTb";
             btnEditTb.Size = new Size(149, 38);
             btnEditTb.TabIndex = 32;
@@ -213,7 +215,7 @@
             btnCancelTb.BackColor = Color.DodgerBlue;
             btnCancelTb.Font = new Font("Times New Roman", 18F);
             btnCancelTb.ForeColor = SystemColors.ControlLightLight;
-            btnCancelTb.Location = new Point(747, 263);
+            btnCancelTb.Location = new Point(518, 252);
             btnCancelTb.Name = "btnCancelTb";
             btnCancelTb.Size = new Size(149, 38);
             btnCancelTb.TabIndex = 33;
@@ -233,7 +235,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AccountDGV4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            AccountDGV4.ColumnHeadersHeight = 4;
+            AccountDGV4.ColumnHeadersHeight = 25;
             AccountDGV4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -244,24 +246,24 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             AccountDGV4.DefaultCellStyle = dataGridViewCellStyle3;
             AccountDGV4.GridColor = Color.FromArgb(231, 229, 255);
-            AccountDGV4.Location = new Point(65, 342);
+            AccountDGV4.Location = new Point(65, 332);
             AccountDGV4.Name = "AccountDGV4";
             AccountDGV4.RowHeadersVisible = false;
-            AccountDGV4.Size = new Size(1160, 369);
+            AccountDGV4.Size = new Size(1159, 379);
             AccountDGV4.TabIndex = 34;
-            AccountDGV4.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            AccountDGV4.ThemeStyle.AlternatingRowsStyle.BackColor = Color.DodgerBlue;
             AccountDGV4.ThemeStyle.AlternatingRowsStyle.Font = null;
             AccountDGV4.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             AccountDGV4.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             AccountDGV4.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             AccountDGV4.ThemeStyle.BackColor = Color.White;
             AccountDGV4.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            AccountDGV4.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            AccountDGV4.ThemeStyle.HeaderStyle.BackColor = Color.DodgerBlue;
             AccountDGV4.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            AccountDGV4.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            AccountDGV4.ThemeStyle.HeaderStyle.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccountDGV4.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             AccountDGV4.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            AccountDGV4.ThemeStyle.HeaderStyle.Height = 4;
+            AccountDGV4.ThemeStyle.HeaderStyle.Height = 25;
             AccountDGV4.ThemeStyle.ReadOnly = false;
             AccountDGV4.ThemeStyle.RowsStyle.BackColor = Color.White;
             AccountDGV4.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -277,7 +279,7 @@
             btnSubmitTb.BackColor = Color.DodgerBlue;
             btnSubmitTb.Font = new Font("Times New Roman", 18F);
             btnSubmitTb.ForeColor = SystemColors.ControlLightLight;
-            btnSubmitTb.Location = new Point(327, 263);
+            btnSubmitTb.Location = new Point(117, 252);
             btnSubmitTb.Name = "btnSubmitTb";
             btnSubmitTb.Size = new Size(149, 38);
             btnSubmitTb.TabIndex = 35;
@@ -287,24 +289,11 @@
             // 
             // txtOccupTb
             // 
-            txtOccupTb.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtOccupTb.Location = new Point(747, 113);
+            txtOccupTb.Font = new Font("Times New Roman", 12F);
+            txtOccupTb.Location = new Point(117, 180);
             txtOccupTb.Name = "txtOccupTb";
             txtOccupTb.Size = new Size(149, 26);
             txtOccupTb.TabIndex = 36;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.Font = new Font("Times New Roman", 18F);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(1029, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(149, 38);
-            button1.TabIndex = 37;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // AddAccounts
             // 
@@ -312,7 +301,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1224, 711);
-            Controls.Add(button1);
             Controls.Add(txtOccupTb);
             Controls.Add(btnSubmitTb);
             Controls.Add(AccountDGV4);
@@ -361,6 +349,5 @@
         private Guna.UI2.WinForms.Guna2DataGridView AccountDGV4;
         private Button btnSubmitTb;
         private TextBox txtOccupTb;
-        private Button button1;
     }
 }

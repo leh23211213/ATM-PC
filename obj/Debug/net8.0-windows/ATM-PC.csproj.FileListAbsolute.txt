@@ -55,3 +55,4 @@ E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Mi
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.Agents.resources

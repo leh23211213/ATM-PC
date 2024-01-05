@@ -29,7 +29,28 @@ namespace ATM_PC
 
         private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void guna2PictureBox1_Click_1(object sender, EventArgs e)
+        {
+            AddAccounts Obj = new AddAccounts();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+            Transactions Obj = new Transactions();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        {
+            Settings Obj = new Settings();
+            Obj.Show();
+            // this.Hide();
         }
     }
 }

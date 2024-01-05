@@ -34,7 +34,7 @@ namespace ATM_PC
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
