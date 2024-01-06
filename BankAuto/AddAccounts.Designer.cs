@@ -36,6 +36,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             panel1 = new Panel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -54,10 +56,12 @@
             AccountDGV4 = new Guna.UI2.WinForms.Guna2DataGridView();
             btnSubmitTb = new Button();
             txtOccupTb = new TextBox();
+            guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AccountDGV4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).BeginInit();
             SuspendLayout();
             // 
             // guna2PictureBox4
@@ -295,12 +299,28 @@
             txtOccupTb.Size = new Size(149, 26);
             txtOccupTb.TabIndex = 36;
             // 
+            // guna2PictureBox5
+            // 
+            guna2PictureBox5.CustomizableEdges = customizableEdges5;
+            guna2PictureBox5.FillColor = Color.Transparent;
+            guna2PictureBox5.Image = (Image)resources.GetObject("guna2PictureBox5.Image");
+            guna2PictureBox5.ImageRotate = 0F;
+            guna2PictureBox5.Location = new Point(1150, 12);
+            guna2PictureBox5.Name = "guna2PictureBox5";
+            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2PictureBox5.Size = new Size(28, 26);
+            guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox5.TabIndex = 40;
+            guna2PictureBox5.TabStop = false;
+            guna2PictureBox5.Click += guna2PictureBox5_Click;
+            // 
             // AddAccounts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1224, 711);
+            Controls.Add(guna2PictureBox5);
             Controls.Add(txtOccupTb);
             Controls.Add(btnSubmitTb);
             Controls.Add(AccountDGV4);
@@ -325,6 +345,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)AccountDGV4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -349,5 +370,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView AccountDGV4;
         private Button btnSubmitTb;
         private TextBox txtOccupTb;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
     }
 }

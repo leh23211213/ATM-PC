@@ -32,7 +32,16 @@ namespace ATM_PC
 
         }
 
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
+       
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+            MainMenu Obj = new MainMenu();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

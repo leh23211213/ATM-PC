@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agents));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agents));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtPassword = new TextBox();
             btnSubmitTb = new Button();
             btnCancelTb = new Button();
@@ -48,20 +50,22 @@
             txtName = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             AccountDGV4 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
+            guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)AccountDGV4).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             SuspendLayout();
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Times New Roman", 12F);
-            txtPassword.Location = new Point(299, 180);
+            txtPassword.Location = new Point(92, 170);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(149, 26);
             txtPassword.TabIndex = 51;
@@ -69,9 +73,9 @@
             // btnSubmitTb
             // 
             btnSubmitTb.BackColor = Color.DodgerBlue;
-            btnSubmitTb.Font = new Font("Times New Roman", 18F);
+            btnSubmitTb.Font = new Font("Times New Roman", 14.25F);
             btnSubmitTb.ForeColor = SystemColors.ControlLightLight;
-            btnSubmitTb.Location = new Point(299, 234);
+            btnSubmitTb.Location = new Point(92, 224);
             btnSubmitTb.Name = "btnSubmitTb";
             btnSubmitTb.Size = new Size(149, 38);
             btnSubmitTb.TabIndex = 50;
@@ -82,9 +86,9 @@
             // btnCancelTb
             // 
             btnCancelTb.BackColor = Color.DodgerBlue;
-            btnCancelTb.Font = new Font("Times New Roman", 18F);
+            btnCancelTb.Font = new Font("Times New Roman", 14.25F);
             btnCancelTb.ForeColor = SystemColors.ControlLightLight;
-            btnCancelTb.Location = new Point(700, 234);
+            btnCancelTb.Location = new Point(493, 224);
             btnCancelTb.Name = "btnCancelTb";
             btnCancelTb.Size = new Size(149, 38);
             btnCancelTb.TabIndex = 49;
@@ -94,9 +98,9 @@
             // btnEditTb
             // 
             btnEditTb.BackColor = Color.DodgerBlue;
-            btnEditTb.Font = new Font("Times New Roman", 18F);
+            btnEditTb.Font = new Font("Times New Roman", 14.25F);
             btnEditTb.ForeColor = SystemColors.ControlLightLight;
-            btnEditTb.Location = new Point(493, 234);
+            btnEditTb.Location = new Point(286, 224);
             btnEditTb.Name = "btnEditTb";
             btnEditTb.Size = new Size(149, 38);
             btnEditTb.TabIndex = 48;
@@ -106,17 +110,17 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 15.75F);
-            label6.Location = new Point(299, 153);
+            label6.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label6.Location = new Point(92, 143);
             label6.Name = "label6";
-            label6.Size = new Size(90, 23);
+            label6.Size = new Size(90, 22);
             label6.TabIndex = 47;
             label6.Text = "Password";
             // 
             // txtAddress
             // 
             txtAddress.Font = new Font("Times New Roman", 12F);
-            txtAddress.Location = new Point(700, 109);
+            txtAddress.Location = new Point(493, 99);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(173, 94);
@@ -125,17 +129,17 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 15.75F);
-            label5.Location = new Point(700, 87);
+            label5.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label5.Location = new Point(493, 77);
             label5.Name = "label5";
-            label5.Size = new Size(76, 23);
+            label5.Size = new Size(76, 22);
             label5.TabIndex = 45;
             label5.Text = "Address";
             // 
             // txtPhone
             // 
             txtPhone.Font = new Font("Times New Roman", 12F);
-            txtPhone.Location = new Point(509, 109);
+            txtPhone.Location = new Point(302, 99);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(149, 26);
             txtPhone.TabIndex = 42;
@@ -143,17 +147,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 15.75F);
-            label3.Location = new Point(509, 87);
+            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label3.Location = new Point(302, 77);
             label3.Name = "label3";
-            label3.Size = new Size(62, 23);
+            label3.Size = new Size(61, 22);
             label3.TabIndex = 41;
             label3.Text = "Phone";
             // 
             // txtName
             // 
             txtName.Font = new Font("Times New Roman", 12F);
-            txtName.Location = new Point(299, 109);
+            txtName.Location = new Point(92, 99);
             txtName.Name = "txtName";
             txtName.Size = new Size(149, 26);
             txtName.TabIndex = 40;
@@ -162,37 +166,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 15.75F);
-            label2.Location = new Point(299, 87);
+            label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label2.Location = new Point(92, 77);
             label2.Name = "label2";
-            label2.Size = new Size(59, 23);
+            label2.Size = new Size(58, 22);
             label2.TabIndex = 39;
             label2.Text = "Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(493, 31);
+            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label1.Location = new Point(286, 21);
             label1.Name = "label1";
-            label1.Size = new Size(161, 27);
+            label1.Size = new Size(137, 22);
             label1.TabIndex = 38;
-            label1.Text = "Manege Agents";
-            // 
-            // guna2PictureBox4
-            // 
-            guna2PictureBox4.CustomizableEdges = customizableEdges1;
-            guna2PictureBox4.FillColor = Color.Transparent;
-            guna2PictureBox4.Image = (Image)resources.GetObject("guna2PictureBox4.Image");
-            guna2PictureBox4.ImageRotate = 0F;
-            guna2PictureBox4.Location = new Point(1172, 9);
-            guna2PictureBox4.Name = "guna2PictureBox4";
-            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox4.Size = new Size(28, 26);
-            guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox4.TabIndex = 37;
-            guna2PictureBox4.TabStop = false;
-            guna2PictureBox4.Click += guna2PictureBox4_Click;
+            label1.Text = "Manage Agents";
             // 
             // AccountDGV4
             // 
@@ -258,17 +247,47 @@
             // 
             // guna2PictureBox2
             // 
-            guna2PictureBox2.CustomizableEdges = customizableEdges3;
+            guna2PictureBox2.CustomizableEdges = customizableEdges1;
             guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(0, 0);
             guna2PictureBox2.Name = "guna2PictureBox2";
-            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2PictureBox2.Size = new Size(65, 58);
             guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox2.TabIndex = 20;
             guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            guna2PictureBox5.CustomizableEdges = customizableEdges3;
+            guna2PictureBox5.FillColor = Color.Transparent;
+            guna2PictureBox5.Image = (Image)resources.GetObject("guna2PictureBox5.Image");
+            guna2PictureBox5.ImageRotate = 0F;
+            guna2PictureBox5.Location = new Point(684, 17);
+            guna2PictureBox5.Name = "guna2PictureBox5";
+            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox5.Size = new Size(28, 26);
+            guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox5.TabIndex = 41;
+            guna2PictureBox5.TabStop = false;
+            guna2PictureBox5.Click += guna2PictureBox5_Click;
+            // 
+            // guna2PictureBox4
+            // 
+            guna2PictureBox4.CustomizableEdges = customizableEdges5;
+            guna2PictureBox4.FillColor = Color.Transparent;
+            guna2PictureBox4.Image = (Image)resources.GetObject("guna2PictureBox4.Image");
+            guna2PictureBox4.ImageRotate = 0F;
+            guna2PictureBox4.Location = new Point(718, 17);
+            guna2PictureBox4.Name = "guna2PictureBox4";
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2PictureBox4.Size = new Size(28, 26);
+            guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox4.TabIndex = 40;
+            guna2PictureBox4.TabStop = false;
+            guna2PictureBox4.Click += guna2PictureBox4_Click_1;
             // 
             // Agents
             // 
@@ -276,6 +295,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1208, 672);
+            Controls.Add(guna2PictureBox5);
+            Controls.Add(guna2PictureBox4);
             Controls.Add(panel1);
             Controls.Add(AccountDGV4);
             Controls.Add(txtPassword);
@@ -290,15 +311,15 @@
             Controls.Add(txtName);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(guna2PictureBox4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Agents";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)AccountDGV4).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -317,9 +338,10 @@
         private TextBox txtName;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2DataGridView AccountDGV4;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
     }
 }

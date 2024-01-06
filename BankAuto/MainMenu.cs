@@ -34,14 +34,14 @@ namespace ATM_PC
 
         private void guna2PictureBox1_Click_1(object sender, EventArgs e)
         {
-            AddAccounts Obj = new AddAccounts();
+            Transactions Obj = new Transactions();
             Obj.Show();
             this.Hide();
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            Transactions Obj = new Transactions();
+            AddAccounts Obj = new AddAccounts();
             Obj.Show();
             this.Hide();
         }
@@ -50,7 +50,19 @@ namespace ATM_PC
         {
             Settings Obj = new Settings();
             Obj.Show();
-            // this.Hide();
+            this.Hide();
+        }
+
+        private void guna2PictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

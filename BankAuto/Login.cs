@@ -41,7 +41,6 @@ namespace ATM_PC
                 else
                 {
                     sqlConnection.Open();
-
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select count(*) from AdminTbl where AdName ='" + txtUserName.Text + "'and AdPassword ='" + txtPassword.Text + "'", sqlConnection);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
@@ -66,7 +65,6 @@ namespace ATM_PC
                 else
                 {
                     sqlConnection.Open();
-
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select count(*) from AgentTbl where AName ='" + txtUserName.Text + "'and APassword ='" + txtPassword.Text + "'", sqlConnection);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);

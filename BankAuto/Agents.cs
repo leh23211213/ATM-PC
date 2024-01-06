@@ -92,5 +92,17 @@ namespace ATM_PC
                 Key = Convert.ToInt32(AccountDGV4.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+            MainMenu Obj = new MainMenu();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

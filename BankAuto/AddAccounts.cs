@@ -152,5 +152,12 @@
         {
 
         }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+            MainMenu Obj = new MainMenu();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
