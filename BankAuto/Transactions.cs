@@ -1,14 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using Microsoft.IdentityModel.Tokens;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace ATM_PC
 {
     public partial class Transactions : Form
@@ -25,6 +17,7 @@ namespace ATM_PC
         int balance = 0;
         private void checkBalance()
         {
+            balance = 0;
             sqlConnection.Open();
             string Query = "select * from AccountTbl where ACNum=" + txtBalance.Text + "";
             SqlCommand cmd = new SqlCommand(Query, sqlConnection);
@@ -38,13 +31,11 @@ namespace ATM_PC
             }
             sqlConnection.Close();
         }
-        private void label15_Click(object sender, EventArgs e)
+        private void getNewBalance(string BalanceText)
         {
-        }
-        private void getNewDepositBalance()
-        {
+            balance = 0;
             sqlConnection.Open();
-            string Query = "select * from AccountTbl where ACNum=" + txtDepositAccountNumber.Text + "";
+            string Query = "select * from AccountTbl where ACNum=" + BalanceText + "";
             SqlCommand cmd = new SqlCommand(Query, sqlConnection);
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
@@ -76,14 +67,14 @@ namespace ATM_PC
         }
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            if (txtDepositAccountNumber.Text == "" || txtDepositAmount.Text == "")
+            if (string.IsNullOrEmpty(txtDepositAccountNumber.Text) || string.IsNullOrEmpty(txtDepositAmount.Text))
             {
                 MessageBox.Show("Missing Information");
             }
             else
             {
                 Deposit();
-                getNewDepositBalance();
+                getNewBalance(txtDepositAccountNumber.Text);
                 int newBalance = balance + Convert.ToInt32(txtDepositAmount.Text);
                 try
                 {
@@ -110,7 +101,6 @@ namespace ATM_PC
             Obj.Show();
             this.Hide();
         }
-
         private void btnCheckBalance_Click(object sender, EventArgs e)
         {
             if (txtBalance.Text == "")
@@ -127,7 +117,6 @@ namespace ATM_PC
                 }
             }
         }
-
         private void WithDraw()
         {
             try
@@ -147,20 +136,6 @@ namespace ATM_PC
                 MessageBox.Show(Ex.Message);
             }
         }
-        private void getNewWithdrawBalance()
-        {
-            sqlConnection.Open();
-            string Query = "select * from AccountTbl where ACNum=" + txtWithDrawAccountNumber.Text + "";
-            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                balance = Convert.ToInt32(dataRow["ACBal"].ToString());
-            }
-            sqlConnection.Close();
-        }
         private void btnWithDrawnAmount_Click(object sender, EventArgs e)
         {
             if (txtWithDrawAccountNumber.Text == "" || txtWithDrawAmount.Text == "")
@@ -169,8 +144,9 @@ namespace ATM_PC
             }
             else
             {
+                balance = 0;
                 WithDraw();
-                getNewWithdrawBalance();
+                getNewBalance(txtWithDrawAccountNumber.Text);
                 if (balance < Convert.ToInt32(txtWithDrawAmount.Text))
                 {
                     MessageBox.Show("Insufisiant Balance");
@@ -198,10 +174,10 @@ namespace ATM_PC
                 }
             }
         }
-        private void checkAvailableBalanceFrom()
+        private void checkAvailableBalance(string text)
         {
             string name = null;
-            string Query = "select * from AccountTbl where ACNum=" + txtTransferFrom.Text + "";
+            string Query = "select * from AccountTbl where ACNum=" + text + "";
             SqlCommand cmd = new SqlCommand(Query, sqlConnection);
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
@@ -211,7 +187,7 @@ namespace ATM_PC
                 balance = Convert.ToInt32(dataRow["ACBal"].ToString());
                 name = dataRow["ACName"].ToString();
             }
-            MessageBox.Show($"Name: {name}\nAccountNumber: {txtTransferFrom.Text}\nBalanceAmount: {balance}");
+            MessageBox.Show($"Name: {name}\nAccountNumber: {text}\nBalanceAmount: {balance}");
         }
         private void lbCheckTransferFromTxt_Click(object sender, EventArgs e)
         {
@@ -228,7 +204,7 @@ namespace ATM_PC
                 sqlDataAdapter.Fill(dataTable);
                 if (dataTable.Rows[0][0].ToString() == "1")
                 {
-                    checkAvailableBalanceFrom();
+                    checkAvailableBalance(txtTransferFrom.Text);
                     sqlConnection.Close();
                 }
                 else
@@ -242,22 +218,6 @@ namespace ATM_PC
 
         private void txtTransferFrom_TextChanged(object sender, EventArgs e)
         {
-
-        }
-        private void checkAvailableBalanceTo()
-        {
-            string name = null;
-            string Query = "select * from AccountTbl where ACNum=" + txtTransferTo.Text + "";
-            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                balance = Convert.ToInt32(dataRow["ACBal"].ToString());
-                name = dataRow["ACName"].ToString();
-            }
-            MessageBox.Show($"Name: {name}\nAccountNumber: {txtTransferTo.Text}\nBalanceAmount: {balance}");
         }
         private void lbCheckTransferToTxt_Click(object sender, EventArgs e)
         {
@@ -274,7 +234,7 @@ namespace ATM_PC
                 sqlDataAdapter.Fill(dataTable);
                 if (dataTable.Rows[0][0].ToString() == "1")
                 {
-                    checkAvailableBalanceTo();
+                    checkAvailableBalance(txtTransferTo.Text);
                     sqlConnection.Close();
                 }
                 else
@@ -285,5 +245,74 @@ namespace ATM_PC
                 sqlConnection.Close();
             }
         }
-    }
-}
+        private void updateDataTransfer()
+        {
+            try
+            {
+                sqlConnection.Open();
+                string Query = "insert into TransferTbl(TfSource,TfDestination,TfAmount,TfDate)values(@TfS,@TfD,@TfA,@TfT)";
+                SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@TfS", txtTransferFrom.Text);
+                sqlCommand.Parameters.AddWithValue("@TfD", txtTransferTo.Text);
+                sqlCommand.Parameters.AddWithValue("@TfA", txtTransferAmount.Text);
+                sqlCommand.Parameters.AddWithValue("@TfT", DateTime.Now.Date);
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Transfer Success");
+                sqlConnection.Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+        private void resetTransferText() {
+            txtTransferFrom.Text = "";
+            txtTransferTo.Text = "";
+            txtTransferAmount.Text = "";
+        }
+        private void transferBalance()
+        {
+            balance = 0;
+            getNewBalance(txtTransferFrom.Text);
+            int addBalance = balance + Convert.ToInt32(txtTransferAmount.Text);
+            int substractBalance = balance - Convert.ToInt32(txtTransferAmount.Text);
+            string addBalanceQuery = "UPDATE AccountTbl SET ACBal = @AB WHERE ACNum = @AcKey1";
+            string substractBalanceQuery = "UPDATE AccountTbl SET ACBal = @AC WHERE ACNum = @AcKey2";
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand cmd1 = new SqlCommand(addBalanceQuery, sqlConnection);
+                SqlCommand cmd2 = new SqlCommand(substractBalanceQuery, sqlConnection);
+                cmd1.Parameters.AddWithValue("@AB", substractBalance);
+                cmd2.Parameters.AddWithValue("@AC", addBalance);
+                cmd1.Parameters.AddWithValue("@AcKey1", txtTransferFrom.Text);
+                cmd2.Parameters.AddWithValue("@AcKey2", txtTransferTo.Text);
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                sqlConnection.Close();
+                resetTransferText();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            balance = 0;
+            if(txtTransferFrom.Text == "" || txtTransferTo.Text == "" || txtTransferAmount.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            } 
+            else if(Convert.ToInt16(txtTransferAmount.Text) < balance) 
+            {
+                MessageBox.Show("Insufisiant Balance");
+            } 
+            else
+            {
+                updateDataTransfer();
+                transferBalance();
+            }
+        }
+     }
+ }

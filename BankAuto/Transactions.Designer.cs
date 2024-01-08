@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transactions));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             panel1 = new Panel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -72,23 +72,21 @@
             lbCheckTo = new Guna.UI2.WinForms.Guna2PictureBox();
             lbCheckForm = new Guna.UI2.WinForms.Guna2PictureBox();
             label13 = new Label();
-            txtTransferAmount = new TextBox();
             label10 = new Label();
             label11 = new Label();
-            btnTransfer = new Button();
             label12 = new Label();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             panel5 = new Panel();
+            btnTransfer = new Button();
             lbCheckTransferToTxt = new Guna.UI2.WinForms.Guna2PictureBox();
             lbCheckTransferFromTxt = new Guna.UI2.WinForms.Guna2PictureBox();
             label20 = new Label();
-            textBox3 = new TextBox();
+            txtTransferAmount = new TextBox();
             txtTransferTo = new TextBox();
             label15 = new Label();
             label16 = new Label();
             label17 = new Label();
-            button3 = new Button();
             label18 = new Label();
             label19 = new Label();
             txtTransferFrom = new TextBox();
@@ -130,13 +128,13 @@
             // 
             // guna2PictureBox2
             // 
-            guna2PictureBox2.CustomizableEdges = customizableEdges1;
+            guna2PictureBox2.CustomizableEdges = customizableEdges15;
             guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(0, 0);
             guna2PictureBox2.Name = "guna2PictureBox2";
-            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2PictureBox2.Size = new Size(65, 58);
             guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox2.TabIndex = 20;
@@ -188,7 +186,7 @@
             lbYourBalance.Size = new Size(115, 22);
             lbYourBalance.TabIndex = 38;
             lbYourBalance.Text = "YourBalance";
-            lbYourBalance.Click += label15_Click;
+          
             // 
             // label14
             // 
@@ -388,13 +386,13 @@
             // 
             // lbCheckTo
             // 
-            lbCheckTo.CustomizableEdges = customizableEdges3;
+            lbCheckTo.CustomizableEdges = customizableEdges17;
             lbCheckTo.FillColor = Color.Transparent;
             lbCheckTo.Image = (Image)resources.GetObject("lbCheckTo.Image");
             lbCheckTo.ImageRotate = 0F;
             lbCheckTo.Location = new Point(328, 122);
             lbCheckTo.Name = "lbCheckTo";
-            lbCheckTo.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            lbCheckTo.ShadowDecoration.CustomizableEdges = customizableEdges18;
             lbCheckTo.Size = new Size(43, 26);
             lbCheckTo.SizeMode = PictureBoxSizeMode.Zoom;
             lbCheckTo.TabIndex = 37;
@@ -402,13 +400,13 @@
             // 
             // lbCheckForm
             // 
-            lbCheckForm.CustomizableEdges = customizableEdges5;
+            lbCheckForm.CustomizableEdges = customizableEdges19;
             lbCheckForm.FillColor = Color.Transparent;
             lbCheckForm.Image = (Image)resources.GetObject("lbCheckForm.Image");
             lbCheckForm.ImageRotate = 0F;
             lbCheckForm.Location = new Point(328, 67);
             lbCheckForm.Name = "lbCheckForm";
-            lbCheckForm.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            lbCheckForm.ShadowDecoration.CustomizableEdges = customizableEdges20;
             lbCheckForm.Size = new Size(43, 26);
             lbCheckForm.SizeMode = PictureBoxSizeMode.Zoom;
             lbCheckForm.TabIndex = 21;
@@ -423,14 +421,6 @@
             label13.Size = new Size(74, 22);
             label13.TabIndex = 35;
             label13.Text = "Amount";
-            // 
-            // txtTransferAmount
-            // 
-            txtTransferAmount.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTransferAmount.Location = new Point(530, 90);
-            txtTransferAmount.Name = "txtTransferAmount";
-            txtTransferAmount.Size = new Size(201, 26);
-            txtTransferAmount.TabIndex = 36;
             // 
             // label10
             // 
@@ -453,17 +443,6 @@
             label11.TabIndex = 32;
             label11.Text = "To";
             // 
-            // btnTransfer
-            // 
-            btnTransfer.BackColor = Color.DodgerBlue;
-            btnTransfer.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
-            btnTransfer.Location = new Point(764, 83);
-            btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(108, 39);
-            btnTransfer.TabIndex = 9;
-            btnTransfer.Text = "Transfer";
-            btnTransfer.UseVisualStyleBackColor = false;
-            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -476,13 +455,13 @@
             // 
             // guna2PictureBox4
             // 
-            guna2PictureBox4.CustomizableEdges = customizableEdges7;
+            guna2PictureBox4.CustomizableEdges = customizableEdges21;
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.Image = (Image)resources.GetObject("guna2PictureBox4.Image");
             guna2PictureBox4.ImageRotate = 0F;
             guna2PictureBox4.Location = new Point(1172, 11);
             guna2PictureBox4.Name = "guna2PictureBox4";
-            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2PictureBox4.Size = new Size(28, 26);
             guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox4.TabIndex = 38;
@@ -491,13 +470,13 @@
             // 
             // guna2PictureBox5
             // 
-            guna2PictureBox5.CustomizableEdges = customizableEdges9;
+            guna2PictureBox5.CustomizableEdges = customizableEdges23;
             guna2PictureBox5.FillColor = Color.Transparent;
             guna2PictureBox5.Image = (Image)resources.GetObject("guna2PictureBox5.Image");
             guna2PictureBox5.ImageRotate = 0F;
             guna2PictureBox5.Location = new Point(1138, 11);
             guna2PictureBox5.Name = "guna2PictureBox5";
-            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2PictureBox5.Size = new Size(28, 26);
             guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox5.TabIndex = 39;
@@ -507,15 +486,15 @@
             // panel5
             // 
             panel5.BackColor = Color.AliceBlue;
+            panel5.Controls.Add(btnTransfer);
             panel5.Controls.Add(lbCheckTransferToTxt);
             panel5.Controls.Add(lbCheckTransferFromTxt);
             panel5.Controls.Add(label20);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(txtTransferAmount);
             panel5.Controls.Add(txtTransferTo);
             panel5.Controls.Add(label15);
             panel5.Controls.Add(label16);
             panel5.Controls.Add(label17);
-            panel5.Controls.Add(button3);
             panel5.Controls.Add(label18);
             panel5.Controls.Add(label19);
             panel5.Controls.Add(txtTransferFrom);
@@ -524,15 +503,27 @@
             panel5.Size = new Size(897, 188);
             panel5.TabIndex = 40;
             // 
+            // btnTransfer
+            // 
+            btnTransfer.BackColor = Color.DodgerBlue;
+            btnTransfer.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            btnTransfer.Location = new Point(739, 96);
+            btnTransfer.Name = "btnTransfer";
+            btnTransfer.Size = new Size(108, 39);
+            btnTransfer.TabIndex = 35;
+            btnTransfer.Text = "Transfer";
+            btnTransfer.UseVisualStyleBackColor = false;
+            btnTransfer.Click += btnTransfer_Click;
+            // 
             // lbCheckTransferToTxt
             // 
-            lbCheckTransferToTxt.CustomizableEdges = customizableEdges11;
+            lbCheckTransferToTxt.CustomizableEdges = customizableEdges25;
             lbCheckTransferToTxt.FillColor = Color.Transparent;
             lbCheckTransferToTxt.Image = (Image)resources.GetObject("lbCheckTransferToTxt.Image");
             lbCheckTransferToTxt.ImageRotate = 0F;
             lbCheckTransferToTxt.Location = new Point(281, 137);
             lbCheckTransferToTxt.Name = "lbCheckTransferToTxt";
-            lbCheckTransferToTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            lbCheckTransferToTxt.ShadowDecoration.CustomizableEdges = customizableEdges26;
             lbCheckTransferToTxt.Size = new Size(28, 26);
             lbCheckTransferToTxt.SizeMode = PictureBoxSizeMode.Zoom;
             lbCheckTransferToTxt.TabIndex = 42;
@@ -541,13 +532,13 @@
             // 
             // lbCheckTransferFromTxt
             // 
-            lbCheckTransferFromTxt.CustomizableEdges = customizableEdges13;
+            lbCheckTransferFromTxt.CustomizableEdges = customizableEdges27;
             lbCheckTransferFromTxt.FillColor = Color.Transparent;
             lbCheckTransferFromTxt.Image = (Image)resources.GetObject("lbCheckTransferFromTxt.Image");
             lbCheckTransferFromTxt.ImageRotate = 0F;
             lbCheckTransferFromTxt.Location = new Point(281, 71);
             lbCheckTransferFromTxt.Name = "lbCheckTransferFromTxt";
-            lbCheckTransferFromTxt.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            lbCheckTransferFromTxt.ShadowDecoration.CustomizableEdges = customizableEdges28;
             lbCheckTransferFromTxt.Size = new Size(28, 26);
             lbCheckTransferFromTxt.SizeMode = PictureBoxSizeMode.Zoom;
             lbCheckTransferFromTxt.TabIndex = 41;
@@ -565,13 +556,13 @@
             label20.TabIndex = 35;
             label20.Text = "Transfer";
             // 
-            // textBox3
+            // txtTransferAmount
             // 
-            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(519, 103);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(201, 26);
-            textBox3.TabIndex = 41;
+            txtTransferAmount.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTransferAmount.Location = new Point(519, 103);
+            txtTransferAmount.Name = "txtTransferAmount";
+            txtTransferAmount.Size = new Size(201, 26);
+            txtTransferAmount.TabIndex = 41;
             // 
             // txtTransferTo
             // 
@@ -610,17 +601,6 @@
             label17.Size = new Size(79, 22);
             label17.TabIndex = 35;
             label17.Text = "Amount:";
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.DodgerBlue;
-            button3.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
-            button3.Location = new Point(744, 96);
-            button3.Name = "button3";
-            button3.Size = new Size(74, 38);
-            button3.TabIndex = 36;
-            button3.Text = "Reset";
-            button3.UseVisualStyleBackColor = false;
             // 
             // label18
             // 
@@ -712,12 +692,12 @@
         private Panel panel5txtTransferTo;
         private Label label10;
         private Label label11;
-        private Button btnTransfer;
+       
         private Label label12;
         private Guna.UI2.WinForms.Guna2PictureBox lbCheckTo;
         private Guna.UI2.WinForms.Guna2PictureBox lbCheckForm;
         private Label label13;
-        private TextBox txtTransferAmount;
+        
         private Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Label lbYourBalance;
@@ -730,14 +710,14 @@
         private Label label15;
         private Label label16;
         private Label label17;
-        private Button button3;
         private Label label18;
         private Label label19;
         private TextBox txtTransferFrom;
         private Guna.UI2.WinForms.Guna2PictureBox lbCheckTransferFromTxt;
         private Label label20;
-        private TextBox textBox3;
+        private TextBox txtTransferAmount;
         private TextBox txtTransferTo;
         private Guna.UI2.WinForms.Guna2PictureBox lbCheckTransferToTxt;
+        private Button btnTransfer;
     }
 }
