@@ -14,10 +14,10 @@
         {
 
         }
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\IT\VSCode\Github\ATM-PC\BankAuto\database\Banking.mdf;Integrated Security=True;Connect Timeout=30");
         private void btnSubmitTb_Click(object sender, EventArgs e)
         {
-            if (txtNameTb.Text == "" || txtPhoneTb.Text == "" || cbGenderTb.Text == "" || txtAddressTb.Text == "" || txtOccupTb.Text == "")
+            if (txtName.Text == "" || txtPhone.Text == "" || cbGender.Text == "" || txtAddress.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -26,12 +26,12 @@
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("insert into AccountTbl(AcName,AcPhone,AcAddress,AcGen,AcOccup,AcBal)values(@AN,@AP,@AA,@AG,@AO,@AB)", sqlConnection);
-                    cmd.Parameters.AddWithValue("@AN", txtNameTb.Text);
-                    cmd.Parameters.AddWithValue("@AP", txtPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@AA", txtAddressTb.Text);
-                    cmd.Parameters.AddWithValue("@AG", cbGenderTb.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@AO", txtOccupTb.Text);
+                    SqlCommand cmd = new SqlCommand("insert into Account(Name,Password,Phone,Address,Gender,Balance) values(@AN,@APassword,@APhone,@AA,@AG,@AB)", sqlConnection);
+                    cmd.Parameters.AddWithValue("@AN", txtName.Text);
+                    cmd.Parameters.AddWithValue("@APassword", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@APhone", txtPhone.Text);
+                    cmd.Parameters.AddWithValue("@AA", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@AG", cbGender.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@AB", 0);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Account Created!");
@@ -47,11 +47,11 @@
         }
         private void Reset()
         {
-            txtNameTb.Text = "";
-            txtPhoneTb.Text = "";
-            cbGenderTb.SelectedIndex = -1;
-            txtAddressTb.Text = "";
-            txtOccupTb.Text = "";
+            txtName.Clear();
+            txtPhone.Clear();
+            cbGender.SelectedIndex = -1;
+            txtAddress.Clear();
+            txtPassword.Clear();
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,12 +59,12 @@
         int Key = 0;
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNameTb.Text = AccountDGV4.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            txtPhoneTb.Text = AccountDGV4.SelectedRows[0].Cells[2].Value.ToString().Trim();
-            txtAddressTb.Text = AccountDGV4.SelectedRows[0].Cells[3].Value.ToString().Trim();
-            cbGenderTb.Text = AccountDGV4.SelectedRows[0].Cells[4].Value.ToString().Trim();
-            txtOccupTb.Text = AccountDGV4.SelectedRows[0].Cells[5].Value.ToString().Trim();
-            if (txtNameTb.Text == "")
+            txtName.Text = AccountDGV4.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            txtPhone.Text = AccountDGV4.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            txtAddress.Text = AccountDGV4.SelectedRows[0].Cells[3].Value.ToString().Trim();
+            cbGender.Text = AccountDGV4.SelectedRows[0].Cells[4].Value.ToString().Trim();
+            txtPassword.Text = AccountDGV4.SelectedRows[0].Cells[5].Value.ToString().Trim();
+            if (txtName.Text == "")
             {
                 Key = 0;
             }
@@ -76,7 +76,7 @@
         private void DisplayAccounts()
         {
             sqlConnection.Open();
-            string Query = "select * from AccountTbl";
+            string Query = "select * from Account";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(Query, sqlConnection);
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
             var dataSet = new DataSet();
@@ -86,7 +86,7 @@
         }
         private void btnEditTb_Click(object sender, EventArgs e)
         {
-            if (txtNameTb.Text == "" || txtPhoneTb.Text == "" || cbGenderTb.Text == "" || txtAddressTb.Text == "" || txtOccupTb.Text == "")
+            if (txtName.Text == "" || txtPhone.Text == "" || cbGender.Text == "" || txtAddress.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -95,12 +95,12 @@
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("update AccountTbl set AcName= @AN ,AcPhone= @AP ,AcAddress= @AA, AcGen= @AG, AcOccup= @AO  where AcNum = @AcKey", sqlConnection);
-                    cmd.Parameters.AddWithValue("@AN", txtNameTb.Text);
-                    cmd.Parameters.AddWithValue("@AP", txtPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@AA", txtAddressTb.Text);
-                    cmd.Parameters.AddWithValue("@AG", cbGenderTb.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@AO", txtOccupTb.Text);
+                    SqlCommand cmd = new SqlCommand("update Account set AcName= @AN ,AcPhone= @AP ,AcAddress= @AA, AcGen= @AG, AcOccup= @AO  where AcNum = @AcKey", sqlConnection);
+                    cmd.Parameters.AddWithValue("@AN", txtName.Text);
+                    cmd.Parameters.AddWithValue("@APassword", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@APhone", txtPhone.Text);
+                    cmd.Parameters.AddWithValue("@AA", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@AG", cbGender.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@AcKey", Key);
                     cmd.ExecuteNonQuery();
                     sqlConnection.Close();
@@ -125,7 +125,7 @@
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("delete from AccountTbl where AcNum = @AcKey", sqlConnection);
+                    SqlCommand cmd = new SqlCommand("delete from Account where Id = @AcKey", sqlConnection);
                     cmd.Parameters.AddWithValue("@AcKey", Key);
                     cmd.ExecuteNonQuery();
                     sqlConnection.Close();
@@ -139,20 +139,10 @@
                 }
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void txtNameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2PictureBox5_Click(object sender, EventArgs e)
         {
             MainMenu Obj = new MainMenu();

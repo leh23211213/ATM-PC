@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="BankAuto\AddAccounts.cs">
+    <Compile Update="ATM-PC\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BankAuto\Agents.cs">
+    <Compile Update="BankAuto\AddAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BankAuto\MainMenu.cs">
@@ -13,13 +13,13 @@
     <Compile Update="BankAuto\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BankAuto\Splash.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="BankAuto\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BankAuto\Transactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -94,7 +94,6 @@
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(248, 26);
             txtUserName.TabIndex = 7;
-            txtUserName.TextChanged += txtPassword_TextChanged;
             // 
             // btnLogin
             // 
@@ -141,20 +140,20 @@
             txtPassword.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(152, 324);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(248, 26);
             txtPassword.TabIndex = 8;
-            txtPassword.TextChanged += txtUserName_TextChanged;
             // 
             // cbRole
             // 
             cbRole.Font = new Font("Times New Roman", 12F);
             cbRole.FormattingEnabled = true;
-            cbRole.Items.AddRange(new object[] { "Admin", "Agent" });
+            cbRole.Items.AddRange(new object[] { "Customer", "Admin" });
             cbRole.Location = new Point(150, 204);
             cbRole.Name = "cbRole";
             cbRole.Size = new Size(250, 27);
             cbRole.TabIndex = 27;
-            cbRole.Text = "Role";
+            cbRole.Text = "Customer";
             // 
             // Login
             // 
@@ -176,7 +175,6 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);

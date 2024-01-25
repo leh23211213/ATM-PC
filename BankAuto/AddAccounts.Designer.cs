@@ -42,20 +42,20 @@
             panel1 = new Panel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             label1 = new Label();
-            txtNameTb = new TextBox();
+            txtName = new TextBox();
             label2 = new Label();
-            txtPhoneTb = new TextBox();
+            txtPhone = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            cbGenderTb = new ComboBox();
-            txtAddressTb = new TextBox();
+            cbGender = new ComboBox();
+            txtAddress = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            btnEditTb = new Button();
-            btnCancelTb = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
             AccountDGV4 = new Guna.UI2.WinForms.Guna2DataGridView();
-            btnSubmitTb = new Button();
-            txtOccupTb = new TextBox();
+            btnSubmit = new Button();
+            txtPassword = new TextBox();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             panel1.SuspendLayout();
@@ -114,14 +114,14 @@
             label1.TabIndex = 20;
             label1.Text = "New Account Form";
             // 
-            // txtNameTb
+            // txtName
             // 
-            txtNameTb.Font = new Font("Times New Roman", 12F);
-            txtNameTb.Location = new Point(117, 109);
-            txtNameTb.Name = "txtNameTb";
-            txtNameTb.Size = new Size(149, 26);
-            txtNameTb.TabIndex = 22;
-            txtNameTb.TextChanged += txtNameTb_TextChanged;
+            txtName.Font = new Font("Times New Roman", 12F);
+            txtName.Location = new Point(117, 109);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(149, 26);
+            txtName.TabIndex = 22;
+           
             // 
             // label2
             // 
@@ -133,13 +133,13 @@
             label2.TabIndex = 21;
             label2.Text = "Name";
             // 
-            // txtPhoneTb
+            // txtPhone
             // 
-            txtPhoneTb.Font = new Font("Times New Roman", 12F);
-            txtPhoneTb.Location = new Point(327, 109);
-            txtPhoneTb.Name = "txtPhoneTb";
-            txtPhoneTb.Size = new Size(149, 26);
-            txtPhoneTb.TabIndex = 24;
+            txtPhone.Font = new Font("Times New Roman", 12F);
+            txtPhone.Location = new Point(327, 109);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(149, 26);
+            txtPhone.TabIndex = 24;
             // 
             // label3
             // 
@@ -161,24 +161,24 @@
             label4.TabIndex = 25;
             label4.Text = "Gender";
             // 
-            // cbGenderTb
+            // cbGender
             // 
-            cbGenderTb.Font = new Font("Times New Roman", 12F);
-            cbGenderTb.FormattingEnabled = true;
-            cbGenderTb.Items.AddRange(new object[] { "Male", "Female" });
-            cbGenderTb.Location = new Point(327, 180);
-            cbGenderTb.Name = "cbGenderTb";
-            cbGenderTb.Size = new Size(149, 27);
-            cbGenderTb.TabIndex = 26;
+            cbGender.Font = new Font("Times New Roman", 12F);
+            cbGender.FormattingEnabled = true;
+            cbGender.Items.AddRange(new object[] { "Male", "Female" });
+            cbGender.Location = new Point(327, 180);
+            cbGender.Name = "cbGender";
+            cbGender.Size = new Size(149, 27);
+            cbGender.TabIndex = 26;
             // 
-            // txtAddressTb
+            // txtAddress
             // 
-            txtAddressTb.Font = new Font("Times New Roman", 12F);
-            txtAddressTb.Location = new Point(518, 109);
-            txtAddressTb.Multiline = true;
-            txtAddressTb.Name = "txtAddressTb";
-            txtAddressTb.Size = new Size(173, 94);
-            txtAddressTb.TabIndex = 28;
+            txtAddress.Font = new Font("Times New Roman", 12F);
+            txtAddress.Location = new Point(518, 109);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(173, 94);
+            txtAddress.TabIndex = 28;
             // 
             // label5
             // 
@@ -197,35 +197,35 @@
             label6.Font = new Font("Times New Roman", 15.75F);
             label6.Location = new Point(117, 153);
             label6.Name = "label6";
-            label6.Size = new Size(106, 23);
+            label6.Size = new Size(90, 23);
             label6.TabIndex = 29;
-            label6.Text = "Occupation";
+            label6.Text = "Password";
             // 
-            // btnEditTb
+            // btnEdit
             // 
-            btnEditTb.BackColor = Color.DodgerBlue;
-            btnEditTb.Font = new Font("Times New Roman", 18F);
-            btnEditTb.ForeColor = SystemColors.ControlLightLight;
-            btnEditTb.Location = new Point(327, 252);
-            btnEditTb.Name = "btnEditTb";
-            btnEditTb.Size = new Size(149, 38);
-            btnEditTb.TabIndex = 32;
-            btnEditTb.Text = "Edit";
-            btnEditTb.UseVisualStyleBackColor = false;
-            btnEditTb.Click += btnEditTb_Click;
+            btnEdit.BackColor = Color.DodgerBlue;
+            btnEdit.Font = new Font("Times New Roman", 18F);
+            btnEdit.ForeColor = SystemColors.ControlLightLight;
+            btnEdit.Location = new Point(327, 252);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(149, 38);
+            btnEdit.TabIndex = 32;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEditTb_Click;
             // 
-            // btnCancelTb
+            // btnDelete
             // 
-            btnCancelTb.BackColor = Color.DodgerBlue;
-            btnCancelTb.Font = new Font("Times New Roman", 18F);
-            btnCancelTb.ForeColor = SystemColors.ControlLightLight;
-            btnCancelTb.Location = new Point(518, 252);
-            btnCancelTb.Name = "btnCancelTb";
-            btnCancelTb.Size = new Size(149, 38);
-            btnCancelTb.TabIndex = 33;
-            btnCancelTb.Text = "Cancel";
-            btnCancelTb.UseVisualStyleBackColor = false;
-            btnCancelTb.Click += btnCancelTb_Click;
+            btnDelete.BackColor = Color.DodgerBlue;
+            btnDelete.Font = new Font("Times New Roman", 18F);
+            btnDelete.ForeColor = SystemColors.ControlLightLight;
+            btnDelete.Location = new Point(518, 252);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(149, 38);
+            btnDelete.TabIndex = 33;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnCancelTb_Click;
             // 
             // AccountDGV4
             // 
@@ -278,26 +278,26 @@
             AccountDGV4.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             AccountDGV4.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
-            // btnSubmitTb
+            // btnSubmit
             // 
-            btnSubmitTb.BackColor = Color.DodgerBlue;
-            btnSubmitTb.Font = new Font("Times New Roman", 18F);
-            btnSubmitTb.ForeColor = SystemColors.ControlLightLight;
-            btnSubmitTb.Location = new Point(117, 252);
-            btnSubmitTb.Name = "btnSubmitTb";
-            btnSubmitTb.Size = new Size(149, 38);
-            btnSubmitTb.TabIndex = 35;
-            btnSubmitTb.Text = "Submit";
-            btnSubmitTb.UseVisualStyleBackColor = false;
-            btnSubmitTb.Click += btnSubmitTb_Click;
+            btnSubmit.BackColor = Color.DodgerBlue;
+            btnSubmit.Font = new Font("Times New Roman", 18F);
+            btnSubmit.ForeColor = SystemColors.ControlLightLight;
+            btnSubmit.Location = new Point(117, 252);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(149, 38);
+            btnSubmit.TabIndex = 35;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmitTb_Click;
             // 
-            // txtOccupTb
+            // txtPassword
             // 
-            txtOccupTb.Font = new Font("Times New Roman", 12F);
-            txtOccupTb.Location = new Point(117, 180);
-            txtOccupTb.Name = "txtOccupTb";
-            txtOccupTb.Size = new Size(149, 26);
-            txtOccupTb.TabIndex = 36;
+            txtPassword.Font = new Font("Times New Roman", 12F);
+            txtPassword.Location = new Point(117, 180);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(149, 26);
+            txtPassword.TabIndex = 36;
             // 
             // guna2PictureBox5
             // 
@@ -321,19 +321,19 @@
             BackColor = Color.White;
             ClientSize = new Size(1224, 711);
             Controls.Add(guna2PictureBox5);
-            Controls.Add(txtOccupTb);
-            Controls.Add(btnSubmitTb);
+            Controls.Add(txtPassword);
+            Controls.Add(btnSubmit);
             Controls.Add(AccountDGV4);
-            Controls.Add(btnCancelTb);
-            Controls.Add(btnEditTb);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
             Controls.Add(label6);
-            Controls.Add(txtAddressTb);
+            Controls.Add(txtAddress);
             Controls.Add(label5);
-            Controls.Add(cbGenderTb);
+            Controls.Add(cbGender);
             Controls.Add(label4);
-            Controls.Add(txtPhoneTb);
+            Controls.Add(txtPhone);
             Controls.Add(label3);
-            Controls.Add(txtNameTb);
+            Controls.Add(txtName);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -356,20 +356,20 @@
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Label label1;
-        private TextBox txtNameTb;
+        private TextBox txtName;
         private Label label2;
-        private TextBox txtPhoneTb;
+        private TextBox txtPhone;
         private Label label3;
         private Label label4;
-        private ComboBox cbGenderTb;
-        private TextBox txtAddressTb;
+        private ComboBox cbGender;
+        private TextBox txtAddress;
         private Label label5;
         private Label label6;
-        private Button btnEditTb;
-        private Button btnCancelTb;
+        private Button btnEdit;
+        private Button btnDelete;
         private Guna.UI2.WinForms.Guna2DataGridView AccountDGV4;
-        private Button btnSubmitTb;
-        private TextBox txtOccupTb;
+        private Button btnSubmit;
+        private TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
     }
 }

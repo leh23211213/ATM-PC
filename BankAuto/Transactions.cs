@@ -1,11 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
-using Microsoft.IdentityModel.Tokens;
 using System.Data;
 namespace ATM_PC
 {
     public partial class Transactions : Form
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Documents\BankDb.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
+        decimal balance = 0;
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\IT\VSCode\Github\ATM-PC\BankAuto\database\Banking.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
         public Transactions()
         {
             InitializeComponent();
@@ -14,49 +14,63 @@ namespace ATM_PC
         {
             Application.Exit();
         }
-        int balance = 0;
         private void checkBalance()
         {
             balance = 0;
             sqlConnection.Open();
-            string Query = "select * from AccountTbl where ACNum=" + txtBalance.Text + "";
-            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
+            string Query = "SELECT * FROM Account WHERE Number = @AB";
+            using (SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection))
             {
-                lbYourBalance.Text = dataRow["ACBal"].ToString();
-                balance = Convert.ToInt32(dataRow["ACBal"].ToString());
+                sqlCommand.Parameters.AddWithValue("@AB", txtBalance.Text);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(dataTable);
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    lbYourBalance.Text = dataRow["Balance"].ToString();
+                }
             }
             sqlConnection.Close();
         }
         private void getNewBalance(string BalanceText)
         {
-            balance = 0;
-            sqlConnection.Open();
-            string Query = "select * from AccountTbl where ACNum=" + BalanceText + "";
-            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
-            {
-                balance = Convert.ToInt32(dataRow["ACBal"].ToString());
+            try{
+               if(sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+                sqlConnection.Open();
+                string Query = "SELECT * FROM Account WHERE Number = @AN";
+                using (SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@AN", BalanceText);
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                    sqlDataAdapter.Fill(dataTable);
+                    foreach (DataRow dataRow in dataTable.Rows)
+                    {
+                        balance = decimal.Parse(dataRow["Balance"].ToString());
+                    }
+                }
+                sqlConnection.Close();
             }
-            sqlConnection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                sqlConnection.Close();
+            }
         }
         private void Deposit()
         {
             try
             {
                 sqlConnection.Open();
-                string Query = "insert into TransactionTbl(TName,TDate,TAmount,TAcNum)values(@TN,@TD,@TA,@TAN)";
+                string Query = "INSERT INTO Transactions(Type,SourceAccountNumber,Date,Amount) VALUES(@TT,@TDAN,@TD,@TA)";
                 SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@TN", "Deposit");
-                sqlCommand.Parameters.AddWithValue("@TD", DateTime.Now.Date);
+                sqlCommand.Parameters.AddWithValue("@TT", "Deposit");
+                sqlCommand.Parameters.AddWithValue("@TDAN", txtDepositAccountNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@TD", DateTime.Now);
                 sqlCommand.Parameters.AddWithValue("@TA", txtDepositAmount.Text);
-                sqlCommand.Parameters.AddWithValue("@TAN", txtDepositAccountNumber.Text);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
             }
@@ -75,14 +89,14 @@ namespace ATM_PC
             {
                 Deposit();
                 getNewBalance(txtDepositAccountNumber.Text);
-                int newBalance = balance + Convert.ToInt32(txtDepositAmount.Text);
+                decimal newBalance = balance + decimal.Parse(txtDepositAmount.Text);
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("Update AccountTbl set ACbal=@AB where ACNum=@AcKey", sqlConnection);
-                    cmd.Parameters.AddWithValue("@AB", newBalance);
-                    cmd.Parameters.AddWithValue("@AcKey", txtDepositAccountNumber.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlCommand sqlCommand = new SqlCommand("UPDATE Account SET Balance = @AB WHERE Number = @AcKey", sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("@AB", newBalance);
+                    sqlCommand.Parameters.AddWithValue("@AcKey", txtDepositAccountNumber.Text);
+                    sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Balance Deposited!");
                     sqlConnection.Close();
                     txtDepositAccountNumber.Text = "";
@@ -122,12 +136,12 @@ namespace ATM_PC
             try
             {
                 sqlConnection.Open();
-                string Query = "insert into TransactionTbl(TName,TDate,TAmount,TAcNum)values(@TN,@TD,@TA,@TAN)";
+                string Query = "INSERT INTO Transactions(Type,SourceAccountNumber,Date,Amount) VALUES(@TWT,@TWAN,@TWD,@TWA)";
                 SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@TN", "WithDraw");
-                sqlCommand.Parameters.AddWithValue("@TD", DateTime.Now.Date);
-                sqlCommand.Parameters.AddWithValue("@TA", txtWithDrawAmount.Text);
-                sqlCommand.Parameters.AddWithValue("@TAN", txtWithDrawAccountNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@TWT", "WithDraw");
+                sqlCommand.Parameters.AddWithValue("@TWAN", txtWithDrawAccountNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@TWD", DateTime.Now);
+                sqlCommand.Parameters.AddWithValue("@TWA", txtWithDrawAmount.Text);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
             }
@@ -144,24 +158,23 @@ namespace ATM_PC
             }
             else
             {
-                balance = 0;
-                WithDraw();
                 getNewBalance(txtWithDrawAccountNumber.Text);
-                if (balance < Convert.ToInt32(txtWithDrawAmount.Text))
+                if (balance < decimal.Parse(txtWithDrawAmount.Text))
                 {
                     MessageBox.Show("Insufisiant Balance");
                 }
                 else
                 {
-                    int newBalance = balance - Convert.ToInt32(txtWithDrawAmount.Text);
+                    decimal newBalance = balance - decimal.Parse(txtWithDrawAmount.Text);
                     try
                     {
                         sqlConnection.Open();
-                        SqlCommand cmd = new SqlCommand("Update AccountTbl set ACbal=@AB where ACNum=@AcKey", sqlConnection);
-                        cmd.Parameters.AddWithValue("@AB", newBalance);
-                        cmd.Parameters.AddWithValue("@AcKey", txtWithDrawAccountNumber.Text);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Balance Withdrew!");
+                        SqlCommand sqlCommand = new SqlCommand("UPDATE Account SET Balance = @AB WHERE Number = @AcKey", sqlConnection);
+                        sqlCommand.Parameters.AddWithValue("@AB", newBalance);
+                        sqlCommand.Parameters.AddWithValue("@AcKey", txtWithDrawAccountNumber.Text);
+                        sqlCommand.ExecuteNonQuery();
+                        MessageBox.Show("Balance Withdraw Success!");
+                        WithDraw();
                         sqlConnection.Close();
                         txtWithDrawAccountNumber.Text = "";
                         txtWithDrawAmount.Text = "";
@@ -177,17 +190,20 @@ namespace ATM_PC
         private void checkAvailableBalance(string text)
         {
             string name = null;
-            string Query = "select * from AccountTbl where ACNum=" + text + "";
-            SqlCommand cmd = new SqlCommand(Query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
+            string Query = "SELECT * FROM Account WHERE Number = @AN";
+            using (SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection))
             {
-                balance = Convert.ToInt32(dataRow["ACBal"].ToString());
-                name = dataRow["ACName"].ToString();
+                sqlCommand.Parameters.AddWithValue("@AN", text);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(dataTable);
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    balance = decimal.Parse(dataRow["Balance"].ToString());
+                    name = dataRow["Number"].ToString();
+                }
+                MessageBox.Show($"Name: {name}\nAccountNumber: {text}\nBalanceAmount: {balance}");
             }
-            MessageBox.Show($"Name: {name}\nAccountNumber: {text}\nBalanceAmount: {balance}");
         }
         private void lbCheckTransferFromTxt_Click(object sender, EventArgs e)
         {
@@ -198,49 +214,53 @@ namespace ATM_PC
             else
             {
                 sqlConnection.Open();
-                string Query = "select count(*) from AccountTbl where ACNum='" + txtTransferFrom.Text + "' ";
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(Query, sqlConnection);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                if (dataTable.Rows[0][0].ToString() == "1")
+                string Query = "SELECT COUNT(*) FROM Account WHERE Number = @ATS";
+                using (SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection))
                 {
-                    checkAvailableBalance(txtTransferFrom.Text);
-                    sqlConnection.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Account Does Not Exist");
-                    txtTransferFrom.Text = "";
+                    sqlCommand.Parameters.AddWithValue("@ATS", txtTransferFrom.Text);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    if (dataTable.Rows[0][0].ToString() == "1")
+                    {
+                        checkAvailableBalance(txtTransferFrom.Text);
+                        sqlConnection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Account Does Not Exist");
+                        txtTransferFrom.Text = "";
+                    }
                 }
                 sqlConnection.Close();
             }
-        }
-
-        private void txtTransferFrom_TextChanged(object sender, EventArgs e)
-        {
         }
         private void lbCheckTransferToTxt_Click(object sender, EventArgs e)
         {
             if (txtTransferTo.Text == "")
             {
-                MessageBox.Show("Enter Source Account");
+                MessageBox.Show("Enter Destination Account");
             }
             else
             {
                 sqlConnection.Open();
-                string Query = "select count(*) from AccountTbl where ACNum='" + txtTransferTo.Text + "' ";
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(Query, sqlConnection);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                if (dataTable.Rows[0][0].ToString() == "1")
+                string Query = "SELECT COUNT(*) FROM Account WHERE Number = @ATD";
+                using (SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection))
                 {
-                    checkAvailableBalance(txtTransferTo.Text);
-                    sqlConnection.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Account Does Not Exist");
-                    txtTransferTo.Text = "";
+                    sqlCommand.Parameters.AddWithValue("@ATD", txtTransferTo.Text);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    if (dataTable.Rows[0][0].ToString() == "1")
+                    {
+                        checkAvailableBalance(txtTransferTo.Text);
+                        sqlConnection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Account Does Not Exist");
+                        txtTransferTo.Text = "";
+                    }
                 }
                 sqlConnection.Close();
             }
@@ -250,12 +270,13 @@ namespace ATM_PC
             try
             {
                 sqlConnection.Open();
-                string Query = "insert into TransferTbl(TfSource,TfDestination,TfAmount,TfDate)values(@TfS,@TfD,@TfA,@TfT)";
+                string Query = "INSERT INTO Transactions(Type,SourceAccountNumber,Date,Amount,DestinationAccount) VALUES(@TTT,@TTS,@TTD,@TTA,@TTDes)";
                 SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@TfS", txtTransferFrom.Text);
-                sqlCommand.Parameters.AddWithValue("@TfD", txtTransferTo.Text);
-                sqlCommand.Parameters.AddWithValue("@TfA", txtTransferAmount.Text);
-                sqlCommand.Parameters.AddWithValue("@TfT", DateTime.Now.Date);
+                sqlCommand.Parameters.AddWithValue("@TTT", "Transfer");
+                sqlCommand.Parameters.AddWithValue("@TTS", txtTransferFrom.Text);
+                sqlCommand.Parameters.AddWithValue("@TTD", DateTime.Now);
+                sqlCommand.Parameters.AddWithValue("@TTA", txtTransferAmount.Text);
+                sqlCommand.Parameters.AddWithValue("@TTDes", txtTransferTo.Text);
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Transfer Success");
                 sqlConnection.Close();
@@ -265,19 +286,19 @@ namespace ATM_PC
                 MessageBox.Show(Ex.Message);
             }
         }
-        private void resetTransferText() {
+        private void resetTransferText()
+        {
             txtTransferFrom.Text = "";
             txtTransferTo.Text = "";
             txtTransferAmount.Text = "";
         }
-        private void transferBalance()
+        private void updateBalanceTransfer()
         {
-            balance = 0;
             getNewBalance(txtTransferFrom.Text);
-            int addBalance = balance + Convert.ToInt32(txtTransferAmount.Text);
-            int substractBalance = balance - Convert.ToInt32(txtTransferAmount.Text);
-            string addBalanceQuery = "UPDATE AccountTbl SET ACBal = @AB WHERE ACNum = @AcKey1";
-            string substractBalanceQuery = "UPDATE AccountTbl SET ACBal = @AC WHERE ACNum = @AcKey2";
+            decimal substractBalance = balance - decimal.Parse(txtTransferAmount.Text);
+            string addBalanceQuery = "UPDATE Account SET Balance = @AB WHERE Number = @AcKey1";
+            string substractBalanceQuery = "UPDATE Account SET Balance = @AC WHERE Number = @AcKey2";
+            decimal addBalance = balance + decimal.Parse(txtTransferAmount.Text);
             try
             {
                 sqlConnection.Open();
@@ -299,20 +320,41 @@ namespace ATM_PC
         }
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            balance = 0;
-            if(txtTransferFrom.Text == "" || txtTransferTo.Text == "" || txtTransferAmount.Text == "")
+            if (txtTransferFrom.Text == "" || txtTransferTo.Text == "" || txtTransferAmount.Text == "")
             {
                 MessageBox.Show("Missing Information");
-            } 
-            else if(Convert.ToInt16(txtTransferAmount.Text) < balance) 
-            {
-                MessageBox.Show("Insufisiant Balance");
-            } 
+            }
             else
             {
-                updateDataTransfer();
-                transferBalance();
+                sqlConnection.Open();
+                string Query = "SELECT COUNT(*) FROM Account WHERE Number = @ANTS or Number = @ANTD";
+                using(SqlCommand sqlCommand = new SqlCommand(Query,sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ANTS", txtTransferTo.Text);
+                    sqlCommand.Parameters.AddWithValue("@ANTD", txtTransferFrom.Text);
+                    int check = (int)sqlCommand.ExecuteScalar();
+                    if (check == 2)
+                    {
+                        getNewBalance(txtTransferFrom.Text);
+                        if (decimal.Parse(txtTransferAmount.Text) > balance)
+                        {
+                            MessageBox.Show($"Insufisiant Balance {balance}");
+                            sqlConnection.Close();
+                        }
+                        else
+                        {
+                            updateDataTransfer();
+                            updateBalanceTransfer();
+                            sqlConnection.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Account Not Exists");
+                        sqlConnection.Close();
+                    }
+                }
             }
         }
-     }
- }
+    }
+}

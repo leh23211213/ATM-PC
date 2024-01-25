@@ -1,1 +1,4 @@
 .vs
+# Ignore SQL Server files
+*.mdf
+*.ldf

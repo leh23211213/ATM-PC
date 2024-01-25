@@ -26,12 +26,6 @@ E:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ref\ATM-PC.dll
 e:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.Settings.resources
 e:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.Transactions.resources
 e:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.AddAccounts.resources
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-e:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\Azure.Core.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\Azure.Identity.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
@@ -55,4 +49,4 @@ E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Mi
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\IT\VSCode\Github\ATM-PC\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-E:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.Agents.resources
+E:\IT\VSCode\Github\ATM-PC\obj\Debug\net8.0-windows\ATM_PC.ATM_PC.Form1.resources
